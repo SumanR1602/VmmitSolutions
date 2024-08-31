@@ -35,9 +35,9 @@ export default function AddComment() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center lg:px-60 mb-8">
+      <div className="flex flex-col justify-center xl:px-60 mb-8">
         <Home />
-        <div className="py-4 px-8 bg-white my-auto mx-6 mb-24">
+        <div className="py-4 lg:px-8 bg-white my-auto mx-6 mb-24">
           <h3 className='text-2xl font-semibold m-4'>1 thought on "Hello world!"</h3>
           <hr />
           {usercomments.map((data) => (
@@ -57,12 +57,12 @@ export default function AddComment() {
                 onChange={onChange}
                 required
               />
-              <div className="flex flex-row gap-2 mb-6">
+              <div className="flex flex-row gap-2 mb-6 flex-wrap justify-between items-center">
                 <input
                   type="text"
                   name='name'
                   placeholder='Name*'
-                  className='p-3 border-2'
+                  className='p-3 border-2 xl:w-40'
                   value={user.name}
                   onChange={onChange}
                   required
@@ -72,7 +72,7 @@ export default function AddComment() {
                   name="email"
                   id="email"
                   placeholder='Email*'
-                  className='p-3 border-2'
+                  className='p-3 border-2 xl:w-40'
                   value={user.email}
                   onChange={onChange}
                   required
@@ -81,7 +81,7 @@ export default function AddComment() {
                   type="text"
                   name="website"
                   placeholder='Website'
-                  className='p-3 border-2'
+                  className='p-3 border-2 xl:w-40'
                   value={user.website}
                   onChange={onChange}
                   required
