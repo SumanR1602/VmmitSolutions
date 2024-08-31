@@ -17,11 +17,9 @@ export default function CommentItem(props) {
     const context = useContext(vmmitContext);
     const { deleteComment } = context;
 
-    // Convert date from props and format it
     const date = new Date(props.data.date);
     const structuredDate = formatDate(date);
 
-    // Define a handler function for the delete button
     const handleDelete = () => {
         deleteComment(props.data._id);
     };
@@ -29,7 +27,7 @@ export default function CommentItem(props) {
     return (
         <div className='my-4 px-4'>
             <article className='mb-8'>
-                <div className="flex flex-row justify-between mb-2 items-center">
+                <div className="flex flex-row justify-between mb-2 items-center flex-wrap gap-3">
                     <div className="flex items-center gap-4">
                         <img src={authorImg} alt="Author's portrait" className='w-10 rounded-full' />
                         <div className="flex flex-col">
@@ -42,17 +40,17 @@ export default function CommentItem(props) {
                     </div>
                     <p className='text-blue-700 font-semibold text-xs'>{structuredDate}</p>
                 </div>
-                <div className="ps-14 flex flex-col gap-2 mb-2">
+                <div className="lg:ps-14 flex flex-col flex-wrap gap-2 mb-2">
                     <p className='text-base '>{props.data.comment}</p>
-                    <p className='text-sm font-semibold'>
-                        Website:
-                        <a href={props.data.website} target="_blank" rel="noopener noreferrer" className='pl-2 text-blue-700 text-sm hover:text-blue-800'>{props.data.website}
+                    <div className='text-sm font-semibold break-words flex flex-wrap'>
+                        <p>Website:</p>&nbsp;
+                        <a href={props.data.website} target="_blank" rel="noopener noreferrer" className=' text-blue-700 text-sm hover:text-blue-800'>{props.data.website}
                         </a>
-                    </p>
+                    </div>
 
                 </div>
 
-                <div className="ps-14 flex flex-row justify-between my-4">
+                <div className="lg:ps-14 flex flex-row justify-between my-4">
                     <button className='border-blue-800 border-[1px] px-2 py-1 text-sm text-blue-700 font-semibold cursor-pointer hover:bg-blue-800 hover:text-white'>
                         Reply
                     </button>
