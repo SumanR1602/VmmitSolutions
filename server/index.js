@@ -7,7 +7,12 @@ const cors=require('cors');
 const connectToMongo = require('./db');
 connectToMongo();
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "DELETE"],
+  allowedHeaders: ["Content-Type"],
+  optionsSuccessStatus: 200
+}));
 app.get("/", (req, res) => {
     res.send("Hello world")
 })
