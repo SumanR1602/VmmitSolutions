@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import VmmitContext from './vmmitContext'
 const VmmitState = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://vmmitsolutions-backend.vercel.app"
     const commentsInitial = [];
     const [usercomments, setUserComments] = useState(commentsInitial);
 
